@@ -9,10 +9,6 @@ var StudentSchema = new Schema({
     type: String,
     required: true
   },
-  gender: {
-    type: String,
-    required: true
-  },
   email: {
     type: String,
     required: true
@@ -20,40 +16,51 @@ var StudentSchema = new Schema({
   phone: {
     type: String
   },
-  hometown: {
+  password: {
     type: String,
     required: true
+  },
+  gender: {
+    type: String,
+    required: true
+  },
+  hometown: {
+    type: String,
   },
   country: {
     type: String,
     required: true
   },
-  undergraduteCollege: {
-    type: String
-  },
-  university: {
-    type: String,
-    required: true
-  }
-  department: {
-    type: String
-  },
   language: {
     type: String,
     required: true
   },
-  flight: {
+  alumniSchool: {
+    type: String
+  },
+  areaOfStudy: {
     type: String,
     required: true
   },
+
   arrivalDate: {
     type: Date,
     required: true
   },
-  luggage: {
-    type: Number,
+
+  flight: {
+    type: String,
     required: true
   },
+  airport: {
+    type: String,
+    required: true
+  },
+  university: {
+    type: String,
+    required: true
+  },
+
   note: {
     type: String
   },
