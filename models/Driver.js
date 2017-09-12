@@ -10,22 +10,58 @@ var DriverSchema = new Schema({
     type: String,
     required: true
   },
+  gender: {
+    type: String,
+    required: true
+  },
   // Just a string
   email: {
     type: String,
     required: true
   },
-  phone: {
+  mobile: {
+  	type: String,
+  	required: true
+  },
+  makeOfCar: {
+    type: String,
+    required: true
+  },
+  colorOfCar: {
+    type: String,
+    required: true
+  },
+  hometown: {
+    type: String,
+    required: true
+  },
+  homeCountry: {
+    type: String,
+    required: true
+  }
+  language: {
+    type: String,
+    required: true
+  },
+  areaOfStudy: {
   	type: String,
   	required: true
   },
   university: {
-  	type: String,
-  	required: true
+    type: String,
+    required: true
+  }
+  alumniSchool: {
+    type: String
+    required: true
   },
   numberSeats: {
   	type: Number,
   	required: true
+  },
+  note: {
+    type: String,
+    required: true
   }
 });
 
