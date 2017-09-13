@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>International Student Pickup</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -16,8 +17,33 @@
             <a class="navbar-brand" href="#">
     <img src="assets/images/logo.png" width="40" height="40" alt="">  International Student Pickup</a>
             <form class="form-inline my-2 my-lg-1">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+             <button type="button" class="btn btn-outline-light">Login</button>
+             <ul class="nav navbar-nav navbar-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                    </button>
+                    <div class="dropdown-menu">
+                        <form id="formLogin" class="form container">
+                            <div class="form-group">
+                                <label for="usr">Name:</label>
+                                <input type="text" class="form-control" id="usr">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd">
+                            </div>
+                            <input type="submit" class="btn btn-info" value="Login">
+                        </form>
+                        <div class="container-fluid">
+                            <br>
+                            <a class="small" href="#">Forgot password?</a>
+                        </div>
+                    </div>
+                    </li>
+            </ul>
             </form>
         </nav>
     </header>
@@ -31,6 +57,9 @@
             <p class="lead1">
                 <a class="btn btn-outline-warning btn-lg" href="#" role="button">Student</a>
                 <a class="btn btn-outline-warning btn-lg" href="#" role="button">Driver</a>
+
+                <a class="btn btn-outline-warning btn-lg" href="#" role="button">University</a>
+
                 </a>
             </p>
         </div>
