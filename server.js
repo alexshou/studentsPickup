@@ -1,6 +1,3 @@
-/* Showing Mongoose's "Populated" Method
- * =============================================== */
-
 // Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -45,6 +42,29 @@ db.once("open", function() {
 
 // Routes
 // ======
+// Write the data from student form to the Student database
+app.get("/student", function(req, res) {
+      var result = {};
+      result.name = $("#name").val().trim();
+      result.gender = $("#gender").val().trim();
+      result.email = $("#email").val().trim();
+      result.phone = $("#phone").val().trim();
+      result.hometown = $("#hometown").val().trim();
+
+      var entry = new Student(result);
+
+      // Now, save that entry to the db
+      entry.save(function(err, doc) {
+        // Log any errors
+        if (err) {
+          console.log(err);
+        }
+        // Or log the doc
+        else {
+          console.log(doc);
+        }
+      });
+});
 
 // This will get the students listed
 app.get("/students", function(req, res) {
