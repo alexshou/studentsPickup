@@ -38,7 +38,7 @@ var DriverSchema = new Schema({
   homeCountry: {
     type: String,
     required: true
-  }
+  },
   language: {
     type: String,
     required: true
@@ -50,9 +50,9 @@ var DriverSchema = new Schema({
   university: {
     type: String,
     required: true
-  }
+  },
   alumniSchool: {
-    type: String
+    type: String,
     required: true
   },
   numberSeats: {

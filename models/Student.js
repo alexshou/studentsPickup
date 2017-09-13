@@ -22,43 +22,42 @@ var StudentSchema = new Schema({
   },
   gender: {
     type: String,
-    required: true
   },
   hometown: {
     type: String,
   },
   country: {
     type: String,
-    required: true
+
   },
   language: {
     type: String,
-    required: true
+
   },
   alumniSchool: {
     type: String
   },
   areaOfStudy: {
     type: String,
-    required: true
+
   },
 
   arrivalDate: {
     type: Date,
-    required: true
+
   },
 
   flight: {
     type: String,
-    required: true
+
   },
   airport: {
     type: String,
-    required: true
+
   },
   university: {
     type: String,
-    required: true
+
   },
 
   note: {
