@@ -66,7 +66,7 @@ var DriverSchema = new Schema({
 });
 
 // Remember, Mongoose will automatically save the ObjectIds of the notes
-// These ids are referred to in the Student model
+// These ids are referred to in the Traverler model
 
 // Create the Driver model with the DriverSchema
 var Driver = mongoose.model("Driver", DriverSchema);

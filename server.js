@@ -6,9 +6,9 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-// Requiring our Driver and Student models
+// Requiring our Driver and Traveler models
 var Driver = require("./models/Driver.js");
-var Student = require("./models/Student.js");
+var Traveler = require("./models/Traveler.js");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -44,7 +44,7 @@ db.once("open", function() {
 // ======
 app.post("/travelerSignup", function(req, res) {
   // Create a new note and pass the req.body to the entry
-  var newTraveler = new Student(req.body);
+  var newTraveler = new Traveler(req.body);
 
   // And save the new note the db
   newTraveler.save(function(error, doc) {
