@@ -5,7 +5,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 // Requiring our Driver and Student models
 var Driver = require("./models/Driver.js");
-var Student = require("./models/Student.js");
+var Traveler = require("./models/Traveler.js");
 // Our scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/studentsPickup");
+mongoose.connect("mongodb://localhost/studentsPickup1");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -42,46 +42,8 @@ db.once("open", function() {
 
 // Routes
 // ======
-// Write the data from student form to the Student database
-app.get("/student", function(req, res) {
-      var result = {};
-      result.name = $("#name").val().trim();
-      result.gender = $("#gender").val().trim();
-      result.email = $("#email").val().trim();
-      result.phone = $("#phone").val().trim();
-      result.hometown = $("#hometown").val().trim();
 
-      var entry = new Student(result);
-
-      // Now, save that entry to the db
-      entry.save(function(err, doc) {
-        // Log any errors
-        if (err) {
-          console.log(err);
-        }
-        // Or log the doc
-        else {
-          console.log(doc);
-        }
-      });
-});
-
-// This will get the students listed
-app.get("/students", function(req, res) {
-  // Grab every doc in the Students array
-  Student.find({}, function(error, doc) {
-    // Log any errors
-    if (error) {
-      console.log(error);
-    }
-    // Or send the doc to the browser as a json object
-    else {
-      res.json(doc);
-    }
-  });
-});
-
-// This will get the students listed
+// This will get the drivers listed
 app.get("/drivers", function(req, res) {
   // Grab every doc in the Students array
   Driver.find({}, function(error, doc) {
@@ -96,10 +58,10 @@ app.get("/drivers", function(req, res) {
   });
 });
 
-// This will get all the students already picked up
-app.get("/studentsPickedUp", function(req, res) {
+// This will get the drivers listed
+app.get("/travelers", function(req, res) {
   // Grab every doc in the Students array
-  Student.find({pickupStatus: true}, function(error, doc) {
+  Traveler.find({}, function(error, doc) {
     // Log any errors
     if (error) {
       console.log(error);
@@ -110,23 +72,40 @@ app.get("/studentsPickedUp", function(req, res) {
     }
   });
 });
+app.post("/travelerSignup", function(req, res) {
+  // Create a new note and pass the req.body to the entry
+  var newTraveler = new Traveler(req.body);
 
-// This will get all the students have not already picked up
-app.get("/studentsNotPickedUp", function(req, res) {
-  // Grab every doc in the Students array
-  Student.find({pickupStatus: false}, function(error, doc) {
+  // And save the new note the db
+  newTraveler.save(function(error, doc) {
     // Log any errors
     if (error) {
       console.log(error);
     }
-    // Or send the doc to the browser as a json object
+    // Otherwise
     else {
-      res.json(doc);
-    }
+        res.send(doc);
+        }
   });
 });
 
 
+app.post("/driverSignup", function(req, res) {
+  // Create a new note and pass the req.body to the entry
+  var newDriver = new Driver(req.body);
+
+  // And save the new note the db
+  newDriver.save(function(error, doc) {
+    // Log any errors
+    if (error) {
+      console.log(error);
+    }
+    // Otherwise
+    else {
+        res.send(doc);
+        }
+  });
+});
 
 // Listen on port 3000
 app.listen(3000, function() {
