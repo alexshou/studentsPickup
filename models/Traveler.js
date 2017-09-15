@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 // Create article schema
-var StudentSchema = new Schema({
+var TravelerSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -13,7 +13,7 @@ var StudentSchema = new Schema({
     type: String,
     required: true
   },
-  phone: {
+  mobile: {
     type: String
   },
   password: {
@@ -22,43 +22,41 @@ var StudentSchema = new Schema({
   },
   gender: {
     type: String,
-    required: true
   },
   hometown: {
     type: String,
   },
   country: {
     type: String,
-    required: true
+
   },
   language: {
     type: String,
-    required: true
+
   },
   alumniSchool: {
     type: String
   },
   areaOfStudy: {
     type: String,
-    required: true
+
   },
 
   arrivalDate: {
     type: Date,
-    required: true
+
   },
 
   flight: {
     type: String,
-    required: true
+
   },
   airport: {
     type: String,
-    required: true
+
   },
   university: {
     type: String,
-    required: true
   },
 
   note: {
@@ -73,8 +71,8 @@ var StudentSchema = new Schema({
   }
 });
 
-// Create the Article model with the StudentSchema
-var Student = mongoose.model("Student", StudentSchema);
+// Create the Article model with the TravelerSchema
+var Traveler = mongoose.model("Traveler", TravelerSchema);
 
 // Export the model
-module.exports = Student;
+module.exports = Traveler;
