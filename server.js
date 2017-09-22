@@ -90,14 +90,15 @@ app.post("/travelerSignup", function(req, res) {
         }
         // Otherwise
         else {
-            
-        }res.redirect("/pProfile");
+            res.json(doc);
+            //res.redirect("/pProfile");
+        }
     });
 });
 
-app.get("/pProfile", function(req, res) {
-    res.sendFile("passengerProfile.html", { root: __dirname + '/public' });
-});
+// app.get("/pProfile", function(req, res) {
+//     res.sendFile("passengerProfile.html", { root: __dirname + '/public' });
+// });
 
 app.post("/driverSignup", function(req, res) {
     // Create a new note and pass the req.body to the entry
@@ -111,14 +112,15 @@ app.post("/driverSignup", function(req, res) {
         }
         // Otherwise
         else {
-            res.redirect("/dProfile");;
+            res.json(doc);
+            //res.redirect("/dProfile");;
         }
     });
 });
 
-app.get("/dProfile", function(req, res) {
-    res.sendFile("driverProfile.html", { root: __dirname + '/public' });
-});
+// app.get("/dProfile", function(req, res) {
+//     res.sendFile("driverProfile.html", { root: __dirname + '/public' });
+// });
 // Listen on port 3000
 app.listen(3000, function() {
     console.log("App running on port 3000!");

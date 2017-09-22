@@ -12,7 +12,7 @@ $(document).on("click", "#saveupInfo", function() {
     method: "POST",
     url: signupUrl,
     data: {
-      name: $("#firstNameInput").val() + $("#lastNameInput").val(),
+      name: $("#firstNameInput").val() + " " + $("#lastNameInput").val(),
       email: $("#emailInput").val(),
       mobile: $("#mobileInput").val(),
       password: $("#passwordInput").val(), 
@@ -20,10 +20,10 @@ $(document).on("click", "#saveupInfo", function() {
   }).done(function(data) {
       console.log(data);
       if (preference === "driverSignup") {
-          window.location.href = "/dProfile";
+          window.location.href = "/driverProfile.html";
       }
       if (preference === "travelerSignup") {
-          window.location.href = "/pProfile";
+          window.location.href = "/passengerProfile.html";
       }
    
   });
