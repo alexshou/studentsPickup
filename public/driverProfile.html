@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>International Student Pickup</title>
+    <script  src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light" style="background-color:#2d2d30;">
+            <a class="navbar-brand" href="index.html">
+    <img src="assets/images/logo.png" width="40" height="40" alt="">  International Student Pickup</a>
+            <form class="form-inline my-2 my-lg-1">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="jumbotron my-4">
+        <h1> Driver Profile</h1>
+            <form>
+            <div class="form-group row">
+                    <label for="MakeInput" class="col-sm-2 col-form-label">Make of Car</label>
+                    <div class="col-auto">
+                    <select class="custom-select">
+  <option selected></option>
+<option value="1">Alfa Romeo</option>
+<option value="2">Aston Martin</option>
+<option value="3">Audi</option>
+<option value="4">Bentley</option>
+<option value="5">Benz</option>
+<option value="6">BMW</option>
+<option value="7">Bugatti</option>
+<option value="8">Cadillac</option>
+<option value="9">Chevrolet</option>
+<option value="10">Chrysler</option>
+<option value="11">Citroen</option>
+<option value="12">Corvette</option>
+<option value="13">DAF</option>
+<option value="14">Dacia</option>
+<option value="15">Daewoo</option>
+<option value="16">Daihatsu</option>
+<option value="17">Datsun</option>
+<option value="18">De Lorean</option>
+<option value="19">Dino</option>
+<option value="20">Dodge</option>
+<option value="21">Farboud</option>
+<option value="22">Ferrari</option>
+<option value="23">Fiat</option>
+<option value="24">Ford</option>
+<option value="25">Honda</option>
+<option value="26">Hummer</option>
+<option value="27">Hyundai</option>
+<option value="28">Jaguar</option>
+<option value="29">Jeep</option>
+<option value="30">KIA</option>
+<option value="31">Koenigsegg</option>
+<option value="32">Lada</option>
+<option value="33">Lamborghini</option>
+<option value="34">Lancia</option>
+<option value="35">Land Rover</option>
+<option value="36">Lexus</option>
+<option value="37">Ligier</option>
+<option value="38">Lincoln</option>
+<option value="39">Lotus</option>
+<option value="40">Martini</option>
+<option value="41">Maserati</option>
+<option value="42">Maybach</option>
+<option value="43">Mazda</option>
+<option value="44">McLaren</option>
+<option value="45">Mercedes</option>
+<option value="46">Mercedes-Benz</option>
+<option value="47">Mini</option>
+<option value="48">Nissan</option>
+<option value="49">Noble</option>
+<option value="50">Opel</option>
+<option value="51">Peugeot</option>
+<option value="52">Pontiac</option>
+<option value="53">Porsche</option>
+<option value="54">Renault</option>
+<option value="55">Rolls-Royce</option>
+<option value="56">Rover</option>
+<option value="57">Saab</option>
+<option value="58">Seat</option>
+<option value="59">Skoda</option>
+<option value="60">Smart</option>
+<option value="61">Spyker</option>
+<option value="62">Subaru</option>
+<option value="63">Suzuki</option>
+<option value="64">Toyota</option>
+<option value="65">Vauxhall</option>
+<option value="66">Volkswagen</option>
+<option value="67">Volvo</option>
+  
+</select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="ColorInput" class="col-sm-2 col-form-label">Color of Car</label>
+                    <div class="col-auto">
+                       <div class="col-auto">
+                    <select class="custom-select">
+  <option selected></option>
+<option value="1">Red</option>
+<option value="2">Yellow</option>
+<option value="3">Black</option>
+<option value="4">White</option>
+<option value="5">Green</option>
+<option value="6">Blue</option>
+<option value="7">Silver</option>
+<option value="8">Brown</option>
+<option value="9">Gold</option>
+<option value="10">Gray</option>
+</select>
+                    </div>
+                    </div>
+                    </div>
+                
+
+                <div class="form-group row">
+                    <label for="HometownInput" class="col-sm-2 col-form-label">Hometown</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="hometownInput" placeholder="Hometown">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="HomeCountryInput" class="col-sm-2 col-form-label">Home Country</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="homeCountryInput" placeholder="Home Country">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="LanguageInput" class="col-sm-2 col-form-label">Language Spoken</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="languageInput" placeholder="Language">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="AreaOfStudyInput" class="col-sm-2 col-form-label">Area of Study</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="areaOfStudyInput" placeholder="Area of Stuy">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="UniversityInput" class="col-sm-2 col-form-label">University to attend</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="universityInput" placeholder="University">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="AlumniSchoolInput" class="col-sm-2 col-form-label">Alumni School</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="alumniSchoolInput" placeholder="School you graduated">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="NumberSeatsInput" class="col-sm-2 col-form-label">Number of person you can pickup</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="numberSeatsInput" placeholder="Each student has 3 luggages">
+                    </div>
+                </div>
+
+                       <div class="form-group">
+    <label for="exampleFormControlTextarea1">Additional Instructions</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+                <button type="button" class="btn btn-success btn" id = "saveDriverProfile"><span class="glyphicon glyphicon-off"></span>Save Changes</button>
+
+                </form>
+
+
+
+
+
+             </div>
+ </div>
+
+<script>
+$(document).on("click", "#saveDriverProfile", function() {
+
+    window.location = "driverPage.html";
+});
+
+</script>
+
+
+</body>
+
+</html>
+ 

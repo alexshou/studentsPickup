@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>International Student Pickup</title>
+    <script  src="https://code.jquery.com/jquery-3.2.1.js"  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light" style="background-color:#2d2d30;">
+            <a class="navbar-brand" href="index.html">
+    <img src="assets/images/logo.png" width="40" height="40" alt="">  International Student Pickup</a>
+            <form class="form-inline my-2 my-lg-1">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="jumbotron my-4">
+        <h1> Passenger Profile </h1>
+        <form>
+
+            <div class="form-group row">
+                    <label for="HometownInput" class="col-sm-2 col-form-label">Hometown</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="hometownInput" placeholder="Hometown">
+                    </div>
+                </div>
+
+                   <div class="form-group row">
+                    <label for="HomeCountryInput" class="col-sm-2 col-form-label">Home Country</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="homeCountryInput" placeholder="Home Country">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="LanguageInput" class="col-sm-2 col-form-label">Language Spoken</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="languageInput" placeholder="Language">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="AreaOfStudyInput" class="col-sm-2 col-form-label">Area of Study</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="areaOfStudyInput" placeholder="Area of Stuy">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="UniversityInput" class="col-sm-2 col-form-label">University to attend</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="universityInput" placeholder="University">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="AlumniSchoolInput" class="col-sm-2 col-form-label">Alumni School</label>
+                    <div class="col-auto">
+                        <input type="text" class="form-control" id="alumniSchoolInput" placeholder="School you graduated">
+                    </div>
+                </div>
+
+                         <div class="form-group row">
+                <label for="option" class="col-sm-2 col-form-label">Gender</label>
+                <div class="col-auto">
+                <select class="custom-select">
+  <option selected></option>
+  <option value="1">Male</option>
+  <option value="2">Female</option>
+  
+</select>
+
+ </div>
+
+ </div>
+ <div class="form-group">
+    <label for="exampleFormControlTextarea1">Additional Instructions</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+ <button type="button" class="btn btn-success btn" id = "savePassengerProfile"><span class="glyphicon glyphicon-off"></span>Submit</button>
+
+ 
+</div>
+
+</div>
+
+</form>
+
+<script>
+$(document).on("click", "#savePassengerProfile", function() {
+
+    window.location = "passengerPage.html";
+});
+
+</script>
+
+
+</body>
+</html>
