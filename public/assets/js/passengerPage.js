@@ -6,6 +6,7 @@ $(document).on("click", "#savePickupRequest", function() {
         data: {
             arrivalDate: $("#arrivalDateInput").val(),
             arrivalTime: $("#arrivalTimeInput").val(),
+            airline: $("#airlineInput").val(),
             flightNumber: $("#flightNumberInput").val(),
             airport: $("#airportInput").val(),
             addtionalInstruction: $("#addtionalInstructionInput").val()

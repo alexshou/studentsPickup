@@ -55,6 +55,10 @@ var TravelerSchema = new Schema({
     type: String,
 
   },
+  airline: {
+    type: String,
+
+  },
   airport: {
     type: String,
 
