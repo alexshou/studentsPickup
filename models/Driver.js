@@ -5,57 +5,57 @@ var Schema = mongoose.Schema;
 
 // Create the Note schema
 var DriverSchema = new Schema({
-  // Just a string
-  name: {
-    type: String,
-    required: true
-  },
-  gender: {
-    type: String
-  },
-  // Just a string
-  email: {
-    type: String,
-    required: true
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  mobile: {
-  	type: String,
-  	required: true
-  },
-  makeOfCar: {
-    type: String
-  },
-  colorOfCar: {
-    type: String
-  },
-  hometown: {
-    type: String
-  },
-  homeCountry: {
-    type: String
-  },
-  language: {
-    type: String
-  },
-  areaOfStudy: {
-  	type: String
-  },
-  university: {
-    type: String
-  },
-  alumniSchool: {
-    type: String
-  },
-  numberSeats: {
-  	type: Number
-  },
-  note: {
-    type: String
-  }
+    // Just a string
+    name: {
+        type: String,
+        required: true
+    },
+    gender: {
+        type: String
+    },
+    // Just a string
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    mobile: {
+        type: String,
+        required: true
+    },
+    makeOfCar: {
+        type: String
+    },
+    colorOfCar: {
+        type: String
+    },
+    hometown: {
+        type: String
+    },
+    homeCountry: {
+        type: String
+    },
+    language: {
+        type: String
+    },
+    areaOfStudy: {
+        type: String
+    },
+    university: {
+        type: String
+    },
+    alumniSchool: {
+        type: String
+    },
+    numberSeats: {
+        type: Number
+    },
+    note: {
+        type: String
+    }
 });
 
 // Remember, Mongoose will automatically save the ObjectIds of the notes

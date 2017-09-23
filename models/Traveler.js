@@ -43,11 +43,15 @@ var TravelerSchema = new Schema({
   },
 
   arrivalDate: {
-    type: Date,
+    type: String,
+
+  },
+  arrivalTime: {
+    type: String,
 
   },
 
-  flight: {
+  flightNumber: {
     type: String,
 
   },
@@ -60,6 +64,9 @@ var TravelerSchema = new Schema({
   },
 
   note: {
+    type: String
+  },
+  addtionalInstruction: {
     type: String
   },
   pickupStatus: {

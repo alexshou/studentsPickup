@@ -96,6 +96,39 @@ app.post("/travelerSignup", function(req, res) {
     });
 });
 
+app.post("/travelerProfile", function(req, res) {
+    // Create a new note and pass the req.body to the entry
+    var profile = req.body;
+    console.log(profile);
+    // for testing purpose, "77 77" must be the name of one of your existed records in database
+    Traveler.findOneAndUpdate({ name: "77 77" }, req.body, function(error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.json(doc);
+        }
+    });
+});
+
+app.post("/pickupRequest", function(req, res) {
+    // Create a new note and pass the req.body to the entry
+    var pickupRequest = req.body;
+    console.log(pickupRequest);
+    // for testing purpose, "77 77" must be the name of one of your existed records in database
+    Traveler.findOneAndUpdate({ name: "77 77" }, pickupRequest, function(error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.json(doc);
+        }
+    });
+});
 // app.get("/pProfile", function(req, res) {
 //     res.sendFile("passengerProfile.html", { root: __dirname + '/public' });
 // });
@@ -114,6 +147,23 @@ app.post("/driverSignup", function(req, res) {
         else {
             res.json(doc);
             //res.redirect("/dProfile");;
+        }
+    });
+});
+
+app.post("/driverProfile", function(req, res) {
+    // Create a new note and pass the req.body to the entry
+    var profile = req.body;
+    console.log(profile);
+    // for testing purpose, "Tony W" must be the name of one of your existed records in database
+    Driver.findOneAndUpdate({ name: "Tony W" }, profile, function(error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.json(doc);
         }
     });
 });
