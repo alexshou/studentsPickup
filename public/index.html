@@ -5,30 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>International Student Pickup</title>
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
-</script>
-
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body>
-<div id="fb-root"></div>
 
+<body>
+    <div id="fb-root"></div>
     <header>
         <nav class="navbar navbar-light" style="background-color:#2d2d30;">
             <a class="navbar-brand" href="#">
     <img src="assets/images/logo.png" width="40" height="40" alt="">  International Student Pickup</a>
             <form class="form-inline my-2 my-lg-1">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </nav>
     </header>
@@ -41,53 +36,51 @@
             <p class="lead1">
                 <a class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#myModal" role="button">Login</a>
                 <a class="btn btn-outline-warning btn-lg" href="Signup.html" role="button">SignUp</a>
-                </p>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-    <div class="modal-content">
-        <div class="modal-body" style="padding:40px 50px;">
-          <form role="form">
-            <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="text" class="form-control" id="psw" placeholder="Enter password">
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="" checked>Remember me</label>
-            </div>
-              <button type="button" class="btn btn-success btn-block" id="loginBtn"><span class="glyphicon glyphicon-off"></span> Login</button>
-                 <button type="submit" class="btn btn-danger btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                 <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-          </form>
-        </div>
-        <div class="modal-footer">
-       
-          <p>Not a member? <a href="#">Sign Up</a></p>
-          <p>Forgot <a href="#">Password?</a></p>
-        </div>
-      </div>
-      
-    </div>
-  </div> 
-</div>
-      </div>
-    </div>
-  </div>
-</div>
-
             </p>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">LOGIN</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-content">
+                                <div class="modal-body" style="padding:40px 50px;">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+                                            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                                            <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="" checked>Remember me</label>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-block" id="loginBtn"><span class="glyphicon glyphicon-off"></span> Login</button>
+                                        <button type="submit" class="btn btn-danger btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <p>Not a member? <a href="#">Sign Up</a></p>
+                                    <p>Forgot <a href="#">Password?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+    </div>
+    </p>
+    </div>
     </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -181,15 +174,12 @@
             <a href='#'><i class="fa fa-snapchat fa-3x fa-fw "></i></a>
         </div>
     </footer>
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 </body>
 <script>
 $('#myModal').on('shown.bs.modal', function() {
-  $('#myInput').focus()
+    $('#myInput').focus()
 })
 
 
@@ -201,27 +191,17 @@ $(document).on("click", "#loginBtn", function() {
     if (un == "traveler") {
         window.location = "passengerPage.html";
         return false;
-    }
-
-    else if (un == "driver") {
+    } else if (un == "driver") {
         window.location = "driverPage.html";
         return false;
-    }
-
-    else {
+    } else {
         var showSaved = $("<p><font color='red'>username/password does not match</font></p>").delay(1000).fadeOut(500);
-        $(".modal-footer").prepend(showSaved); 
+        $(".modal-footer").prepend(showSaved);
         console.log("wrong login info");
     }
 
 
 });
-
-
-
-
-
-
-
 </script>
+
 </html>
