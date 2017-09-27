@@ -28,7 +28,6 @@ var TravelerSchema = new Schema({
   },
   country: {
     type: String,
-
   },
   language: {
     type: String,
@@ -44,11 +43,12 @@ var TravelerSchema = new Schema({
 
   arrivalDate: {
     type: String,
-
   },
   arrivalTime: {
     type: String,
-
+  },
+  arrivalTime: {
+    type: String,
   },
 
   flightNumber: {

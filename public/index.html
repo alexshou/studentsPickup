@@ -35,7 +35,8 @@
             <br>
             <p class="lead1">
                 <a class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#myModal" role="button">Login</a>
-                <a class="btn btn-outline-warning btn-lg" href="Signup.html" role="button">SignUp</a>
+                <a class="btn btn-outline-warning btn-lg" href="passengerSignup.html" role="button">SignUp</a>
+
             </p>
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -49,23 +50,12 @@
                         <div class="modal-body">
                             <div class="modal-content">
                                 <div class="modal-body" style="padding:40px 50px;">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                                            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                                            <input type="text" class="form-control" id="psw" placeholder="Enter password">
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="" checked>Remember me</label>
-                                        </div>
-                                        <button type="button" class="btn btn-success btn-block" id="loginBtn"><span class="glyphicon glyphicon-off"></span> Login</button>
-                                        <button type="submit" class="btn btn-danger btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                                    </form>
+
+                                    <button type="button" class="btn btn-success btn-block" id="passengerLoginBtn"><span class="glyphicon glyphicon-off"></span>Passenger Login</button>
+
+                                    <button type="button" class="btn btn-success btn-block" id="driverLoginBtn"><span class="glyphicon glyphicon-off"></span>Driver Login</button>
+
+
                                 </div>
                                 <div class="modal-footer">
                                     <p>Not a member? <a href="#">Sign Up</a></p>
@@ -183,25 +173,19 @@ $('#myModal').on('shown.bs.modal', function() {
 })
 
 
-$(document).on("click", "#loginBtn", function() {
-    var driverLogin = false;
-    var travelerLogin = false;
-    var un = $("#usrname").val();
 
-    if (un == "traveler") {
-        window.location = "passengerPage.html";
-        return false;
-    } else if (un == "driver") {
-        window.location = "driverPage.html";
-        return false;
-    } else {
-        var showSaved = $("<p><font color='red'>username/password does not match</font></p>").delay(1000).fadeOut(500);
-        $(".modal-footer").prepend(showSaved);
-        console.log("wrong login info");
-    }
-
+$(document).on("click", "#passengerLoginBtn", function() {
+    window.location = "passengerLogin.html";
 
 });
+
+
+$(document).on("click", "#driverLoginBtn", function() {
+    window.location = "driverLogin.html";
+
+});
+
+
 </script>
 
 </html>

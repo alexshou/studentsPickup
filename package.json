@@ -1,27 +1,23 @@
 {
-  "name": "mongoscraper",
+  "name": "studentsPickup",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexshou/studentsPickup.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexshou/studentsPickup"
-  },
-  "homepage": "https://github.com/alexshou/studentsPickup#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "cheerio": "^1.0.0-rc.2",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
     "express": "^4.15.4",
-    "express-handlebars": "^3.0.0",
-    "mongoose": "^4.11.10",
-    "request": "^2.81.0"
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.12",
+    "morgan": "^1.8.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }
