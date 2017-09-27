@@ -112,35 +112,35 @@ app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
 }));
 
 
-// // This will get the drivers listed
-// app.get("/drivers", function(req, res) {
-//     // Grab every doc in the Students array
-//     Driver.find({}, function(error, doc) {
-//         // Log any errors
-//         if (error) {
-//             console.log(error);
-//         }
-//         // Or send the doc to the browser as a json object
-//         else {
-//             res.json(doc);
-//         }
-//     });
-// });
+// This will get the drivers listed
+app.get("/drivers", function(req, res) {
+    // Grab every doc in the Students array
+    Driver.find({}, function(error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.json(doc);
+        }
+    });
+});
 
-// // This will get the drivers listed
-// app.get("/travelers", function(req, res) {
-//     // Grab every doc in the Students array
-//     Traveler.find({}, function(error, doc) {
-//         // Log any errors
-//         if (error) {
-//             console.log(error);
-//         }
-//         // Or send the doc to the browser as a json object
-//         else {
-//             res.json(doc);
-//         }
-//     });
-// });
+// This will get the drivers listed
+app.get("/travelers", function(req, res) {
+    // Grab every doc in the Students array
+    Traveler.find({}, function(error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.json(doc);
+        }
+    });
+});
 // app.post("/travelerSignup", function(req, res) {
 //     // Create a new note and pass the req.body to the entry
 //     var newTraveler = new Traveler(req.body);
@@ -158,7 +158,7 @@ app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
 //         }
 //     });
 // });
-
+// route for passenger to fill in profile info
 app.post("/travelerProfile", function(req, res) {
     // Create a new note and pass the req.body to the entry
     var profile = req.body;
@@ -175,7 +175,7 @@ app.post("/travelerProfile", function(req, res) {
         }
     });
 });
-
+// route for passenger to request a pickup
 app.post("/pickupRequest", function(req, res) {
     // Create a new note and pass the req.body to the entry
     var pickupRequest = req.body;
@@ -193,38 +193,26 @@ app.post("/pickupRequest", function(req, res) {
         }
     });
 });
-// // app.get("/pProfile", function(req, res) {
-// //     res.sendFile("passengerProfile.html", { root: __dirname + '/public' });
-// // });
-
-
-// app.post("/driverProfile", function(req, res) {
-//     // Create a new note and pass the req.body to the entry
-//     var profile = req.body;
-//     console.log(profile);
-//     // for testing purpose, "Tony W" must be the name of one of your existed records in database
-//     Driver.findOneAndUpdate({ name: "Tony W" }, profile, function(error, doc) {
-//         // Log any errors
-//         if (error) {
-//             console.log(error);
-//         }
-//         // Or send the doc to the browser as a json object
-//         else {
-//             res.json(doc);
-//         }
-//     });
-// });
-
-// app.get("/dProfile", function(req, res) {
-//     res.sendFile("driverProfile.html", { root: __dirname + '/public' });
-// });
-// Listen on port 3000
+// route for driver to fill in profile info
+app.post("/driverProfile", function(req, res) {
+    // Create a new note and pass the req.body to the entry
+    var profile = req.body;
+    console.log(profile);
+    console.log(req.user);
+    // for testing purpose, "Tony W" must be the name of one of your existed records in database
+    Driver.findOneAndUpdate({ _id: req.user._id}, profile, function(error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.json(doc);
+        }
+    });
+});
 
 app.listen(3000, function() {
     console.log("App running on port 3000!");
 });
-
-
-// db.col.update({'id':'driver1'},{$set:{'title':'MongoDB'}})
-// db.col.update({'id':'driver1'},{$set:driver1Profile})
 
