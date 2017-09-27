@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pennelyx/mongoscraper.git"
+    "url": "git+https://github.com/alexshou/studentsPickup.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pennelyx/mongoscraper/issues"
+    "url": "https://github.com/alexshou/studentsPickup"
   },
-  "homepage": "https://github.com/pennelyx/mongoscraper#readme",
+  "homepage": "https://github.com/alexshou/studentsPickup#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.2",
