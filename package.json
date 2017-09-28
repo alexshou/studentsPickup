@@ -1,27 +1,31 @@
 {
-  "name": "mongoscraper",
+  "name": "nytreact",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.20",
+    "morgan": "^1.7.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pennelyx/mongoscraper.git"
+  "devDependencies": {
+    "axios": "^0.12.0",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "webpack -w",
+    "dev": "webpack & node server.js"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pennelyx/mongoscraper/issues"
-  },
-  "homepage": "https://github.com/pennelyx/mongoscraper#readme",
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.15.4",
-    "express-handlebars": "^3.0.0",
-    "mongoose": "^4.11.10",
-    "request": "^2.81.0"
-  }
+  "license": "ISC"
 }

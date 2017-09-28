@@ -1,0 +1,127 @@
+h1 {
+	text-align: center;
+	color:white;
+}
+
+
+h2 {
+	text-align:center;
+	padding-top:20px;
+}
+
+
+h3 {
+	padding-top:20px;
+}
+
+
+
+
+
+.lead {
+	text-align:center;
+	color:white;
+}
+
+.lead1{
+	text-align:center;
+}
+
+
+
+
+.btn-outline-warning {
+	width:218px;
+	height:96px;
+
+	-moz-box-shadow: 0 0 10px #ccc;
+		-webkit-box-shadow: 0 0 10px #ccc;
+		box-shadow: 0 0 10px #ccc;
+
+
+}
+
+
+.jumbotron {
+
+	background-color:#35b2ec;
+	margin-top: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	
+
+
+	}
+
+.body {
+
+	background-image: url(../images/international.jpg);
+}
+
+.navbar {
+	padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+.jumbotron-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.price {
+	height:auto;
+	width:200px;
+	vertical-align: middle;
+	padding-top: 45px;
+}
+
+.understand {
+	height:auto;
+	width:200px;
+}
+
+.service {
+	height:auto;
+	width:180px;
+}
+
+h4 {
+	text-align: left;
+	
+}
+
+.footer {
+	text-align:center;
+    background: black;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.followus {
+	text-align:right;
+}
+
+
+.row {
+	padding-top: 30px;
+}
+
+.figure-caption {
+	color:black;
+
+	}
