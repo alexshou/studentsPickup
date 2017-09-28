@@ -125,10 +125,17 @@ app.get("/mainPage", function(req,res){
     res.sendFile(__dirname + "/public/index.html");
 });
 
+<<<<<<< HEAD
 
 app.get("/passengerProfile", function(req,res){
     res.sendFile(__dirname + "/public/passengerProfile.html");
 });
+=======
+app.get("/passengerProfile", function(req,res){
+    res.sendFile(__dirname + "/public/passengerProfile.html");
+});
+
+>>>>>>> 66bbdfb6993f9761f04010e9a53154574b6a27f8
 
 app.get('/home', isAuthenticated, function(req, res){
     //console.log(req);
