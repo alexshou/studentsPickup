@@ -20,6 +20,11 @@ var TravelerSchema = new Schema({
     type: String,
     required: true
   },
+  userType: {
+    type: String,
+    required: true
+  },
+
   gender: {
     type: String,
   },
