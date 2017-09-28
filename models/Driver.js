@@ -26,6 +26,11 @@ var DriverSchema = new Schema({
         type: String,
         required: true
     },
+    userType: {
+        type: String,
+        required: true
+    },
+
     makeOfCar: {
         type: String
     },
