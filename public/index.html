@@ -34,10 +34,10 @@
             <hr class="my-4">
             <br>
             <p class="lead1">
-                <a class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#myModal" role="button">Login</a>
-                <a class="btn btn-outline-warning btn-lg" href="passengerSignup.html" role="button">SignUp</a>
+                <a class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#loginModal" role="button">Login</a>
+                <a class="btn btn-outline-warning btn-lg" data-toggle="modal" data-target="#signupModal" role="button">SignUp</a>
             </p>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -63,6 +63,33 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">signup</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-content">
+                                <div class="modal-body" style="padding:40px 50px;">
+                                    <button type="button" class="btn btn-success btn-block" id="passengerSignupBtn"><span class="glyphicon glyphicon-off"></span>Passenger Signup</button>
+
+                                    <button type="button" class="btn btn-success btn-block" id="driverSignupBtn"><span class="glyphicon glyphicon-off"></span>Driver Signup</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
     </div>
@@ -165,21 +192,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 </body>
 <script>
-$('#myModal').on('shown.bs.modal', function() {
+$('#loginModal').on('shown.bs.modal', function() {
+    $('#myInput').focus()
+})
+
+$('#signupModal').on('shown.bs.modal', function() {
     $('#myInput').focus()
 })
 
 
 $(document).on("click", "#passengerLoginBtn", function() {
     window.location = "passengerLogin.html";
-
 });
 
 
 $(document).on("click", "#driverLoginBtn", function() {
     window.location = "driverLogin.html";
-
 });
+
+$(document).on("click", "#passengerSignupBtn", function() {
+    window.location = "passengerSignup.html";
+});
+
+
+$(document).on("click", "#driverSignupBtn", function() {
+    window.location = "driverSignup.html";
+});
+
+
 
 </script>
 
