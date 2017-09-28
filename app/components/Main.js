@@ -16,6 +16,7 @@ var Passenger = require("../components/Passenger");
 // }
 // We'll create a Greeting component that displays either of these components depending on whether a user is logged in:
 
+// var Main = React.createClass({
 function Main(props) {
   const isPassenger = props.isPassenger;
   if (isPassenger) {
