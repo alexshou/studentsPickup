@@ -91,26 +91,63 @@ app.post('/passengerSignup', passport.authenticate('TravelerSignup', {
 //     res.json(req.user);
 // })
 
+app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
+    successRedirect: '/passengerPage',
+    failureRedirect: '/mainPage',
+    failureFlash : true  
+}));
+
+
+app.post('/driverSignup', passport.authenticate('DriverSignup', {
+    successRedirect: '/home',
+    failureRedirect: '/mainPage',
+    failureFlash : true  
+}));
+
+app.post('/driverLogin', passport.authenticate('DriverLogin', {
+    successRedirect: '/driverPage',
+    failureRedirect: '/mainPage',
+    failureFlash : true  
+}));
+
+
+app.get("/passengerPage",isAuthenticated, function(req,res){
+    res.sendFile(__dirname + "/public/passengerPage.html");
+});
+
+
+app.get("/driverPage",isAuthenticated, function(req,res){
+    res.sendFile(__dirname + "/public/driverPage.html");
+});
+
+
 app.get("/mainPage", function(req,res){
     res.sendFile(__dirname + "/public/index.html");
 });
+
 
 app.get("/passengerProfile", function(req,res){
     res.sendFile(__dirname + "/public/passengerProfile.html");
 });
 
 app.get('/home', isAuthenticated, function(req, res){
-    console.log(req);
+    //console.log(req);
     res.json(req.user);
     //res.render('home', { user: req.user });
 });
 
-app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
-    successRedirect: '/home',
-    failureRedirect: '/mainPage',
-    failureFlash : true  
-}));
 
+
+app.get("/passengerData", function(req, res) {
+    Traveler.find({}, function(error, doc) {
+        if (error) {
+            console.log(error);
+        }
+        else {
+            res.json(doc);
+        }
+    });
+});
 
 // This will get the drivers listed
 app.get("/drivers", function(req, res) {
