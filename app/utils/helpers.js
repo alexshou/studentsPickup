@@ -49,6 +49,11 @@ var helpers = {
         return response.data._id;
       });
   },
+  saveRideDetails : function( data, callable ){
+    return axios.post('/api/ride/request', data)
+                .then(callable);
+  },  
+
   // This will remove saved articles from our database
   deleteSaved: function(title, data, url) {
     return axios.delete("/api/saved", {
