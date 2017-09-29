@@ -31,7 +31,7 @@ var loadTravelers = function(data) {
         travelerNote = data[i].note;
 
         var pickBtn = $("<button>Pick up</button>");
-        pickBtn.addClass("btn btn-default btn-info pickBtnStyle");
+        pickBtn.addClass("btn btn-default btn-info pickBtnFunction");
         pickBtn.attr('id', travelerId);
 
         travelerTr.append(travelerOrderTd);
@@ -59,4 +59,17 @@ var loadTravelers = function(data) {
 
 $.getJSON("/passengerData", function(data) {
     loadTravelers(data);
+});
+
+$(document).on("click", ".pickBtnFunction", function() {
+    var passengerId = $(this).attr("id");
+    $.ajax({
+        method: "POST",
+        url: "/pickupConfirm",
+        data: {
+            passengerId: passengerId
+        }
+    }).done(function(data) {
+         console.log(data);
+    });
 });
