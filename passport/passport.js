@@ -1,29 +1,29 @@
-var LocalStrategy   = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 var Traveler = require('../models/Traveler');
 var Driver = require('../models/Driver')
 var bCrypt = require('bcrypt-nodejs');
 
 
-module.exports = function(passport){
+module.exports = function(passport) {
 
     passport.serializeUser(function(user, done) {
-      var key = {
-        id: user._id,
-        type: user.userType
-      }
-      done(null, key);
+        var key = {
+            id: user._id,
+            type: user.userType
+        }
+        done(null, key);
     });
 
     passport.deserializeUser(function(key, done) {
         if (key.type == "traveler") {
             Traveler.findById(key.id, function(err, user) {
-                console.log('deserializing user:',user);
+                console.log('deserializing user:', user);
                 done(err, user);
             });
         }
         if (key.type == "driver") {
             Driver.findById(key.id, function(err, user) {
-                console.log('deserializing user:',user);
+                console.log('deserializing user:', user);
                 done(err, user);
             });
         }
@@ -34,22 +34,22 @@ module.exports = function(passport){
     passport.use('TravelerLogin', new LocalStrategy({
             usernameField: "email",
             passportField: "password",
-            passReqToCallback : true
+            passReqToCallback: true
         },
-        function(req, email, password, done) { 
+        function(req, email, password, done) {
             // check in mongo if a user with username exists or not
-            Traveler.findOne({ 'email' :  email }, 
+            Traveler.findOne({ 'email': email },
                 function(err, traveler) {
                     // In case of any error, return using the done method
                     if (err)
                         return done(err);
                     // Username does not exist, log the error and redirect back
-                    if (!traveler){
+                    if (!traveler) {
                         console.log('Email Not Found');
-                        return done(null, false, req.flash('message', 'User Not found.'));                 
+                        return done(null, false, req.flash('message', 'User Not found.'));
                     }
                     // User exists but wrong password, log the error 
-                    if (!isValidPassword(traveler, password)){
+                    if (!isValidPassword(traveler, password)) {
                         console.log('Invalid Password');
                         return done(null, false, req.flash('message', 'Invalid Password')); // redirect back to login page
                     }
@@ -59,11 +59,10 @@ module.exports = function(passport){
                 }
             );
 
-        })
-    );
+        }));
 
 
-    var isValidPassword = function(user, password){
+    var isValidPassword = function(user, password) {
         return bCrypt.compareSync(password, user.password);
     }
 
@@ -71,23 +70,23 @@ module.exports = function(passport){
     passport.use('TravelerSignup', new LocalStrategy({
             usernameField: "email",
             passportField: "password",
-            passReqToCallback : true // allows us to pass back the entire request to the callback
+            passReqToCallback: true // allows us to pass back the entire request to the callback
         },
         function(req, email, password, done) {
             //console.log(req.param);
 
-            findOrCreateUser = function(){
+            findOrCreateUser = function() {
                 // find a user in Mongo with provided email
-                Traveler.findOne({ 'email' :  email }, function(err, traveler) {
+                Traveler.findOne({ 'email': email }, function(err, traveler) {
                     // In case of any error, return using the done method
-                    if (err){
-                        console.log('Error in SignUp: '+err);
+                    if (err) {
+                        console.log('Error in SignUp: ' + err);
                         return done(err);
                     }
                     // already exists
                     if (traveler) {
                         console.log('Email already exists');
-                        return done(null, false, req.flash('message','User Already Exists'));
+                        return done(null, false, req.flash('message', 'User Already Exists'));
                     } else {
                         // if there is no user with that email
                         // create the user
@@ -102,11 +101,11 @@ module.exports = function(passport){
 
                         // save the Traveler
                         newTraveler.save(function(err) {
-                            if (err){
-                                console.log('Error in Saving Traveler: '+err);  
-                                throw err;  
+                            if (err) {
+                                console.log('Error in Saving Traveler: ' + err);
+                                throw err;
                             }
-                            console.log('Registration succesful');    
+                            console.log('Registration succesful');
                             return done(null, newTraveler);
                         });
                     }
@@ -115,33 +114,32 @@ module.exports = function(passport){
             // Delay the execution of findOrCreateUser and execute the method
             // in the next tick of the event loop
             process.nextTick(findOrCreateUser);
-        })
-    );
+        }));
 
     // Generates hash using bCrypt
-    var createHash = function(password){
+    var createHash = function(password) {
         return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
     }
 
     passport.use('DriverLogin', new LocalStrategy({
             usernameField: "email",
             passportField: "password",
-            passReqToCallback : true
+            passReqToCallback: true
         },
-        function(req, email, password, done) { 
+        function(req, email, password, done) {
             // check in mongo if a user with username exists or not
-            Driver.findOne({ 'email' :  email }, 
+            Driver.findOne({ 'email': email },
                 function(err, driver) {
                     // In case of any error, return using the done method
                     if (err)
                         return done(err);
                     // Username does not exist, log the error and redirect back
-                    if (!driver){
+                    if (!driver) {
                         console.log('Email Not Found');
-                        return done(null, false, req.flash('message', 'User Not found.'));                 
+                        return done(null, false, req.flash('message', 'User Not found.'));
                     }
                     // User exists but wrong password, log the error 
-                    if (!isValidPassword(driver, password)){
+                    if (!isValidPassword(driver, password)) {
                         console.log('Invalid Password');
                         return done(null, false, req.flash('message', 'Invalid Password')); // redirect back to login page
                     }
@@ -151,30 +149,29 @@ module.exports = function(passport){
                 }
             );
 
-        })
-    );
+        }));
 
 
     passport.use('DriverSignup', new LocalStrategy({
             usernameField: "email",
             passportField: "password",
-            passReqToCallback : true // allows us to pass back the entire request to the callback
+            passReqToCallback: true // allows us to pass back the entire request to the callback
         },
         function(req, email, password, done) {
             //console.log(req.param);
 
-            findOrCreateUser = function(){
+            findOrCreateUser = function() {
                 // find a user in Mongo with provided email
-                Driver.findOne({ 'email' :  email }, function(err, driver) {
+                Driver.findOne({ 'email': email }, function(err, driver) {
                     // In case of any error, return using the done method
-                    if (err){
-                        console.log('Error in SignUp: '+err);
+                    if (err) {
+                        console.log('Error in SignUp: ' + err);
                         return done(err);
                     }
                     // already exists
                     if (driver) {
                         console.log('Email already exists');
-                        return done(null, false, req.flash('message','User Already Exists'));
+                        return done(null, false, req.flash('message', 'User Already Exists'));
                     } else {
                         // if there is no user with that email
                         // create the user
@@ -189,11 +186,11 @@ module.exports = function(passport){
 
                         // save the Driver
                         newDriver.save(function(err) {
-                            if (err){
-                                console.log('Error in Saving Driver: '+err);  
-                                throw err;  
+                            if (err) {
+                                console.log('Error in Saving Driver: ' + err);
+                                throw err;
                             }
-                            console.log('Registration succesful');    
+                            console.log('Registration succesful');
                             return done(null, newDriver);
                         });
                     }
@@ -202,7 +199,6 @@ module.exports = function(passport){
             // Delay the execution of findOrCreateUser and execute the method
             // in the next tick of the event loop
             process.nextTick(findOrCreateUser);
-        })
-    );
+        }));
 
 }

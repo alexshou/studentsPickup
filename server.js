@@ -66,11 +66,11 @@ var initPassport = require('./passport/passport');
 initPassport(passport);
 
 
-var isAuthenticated = function (req, res, next) {
+var isAuthenticated = function(req, res, next) {
     // if user is authenticated in the session, call the next() to call the next request handler 
     // Passport adds this method to request object. A middleware is allowed to add properties to
     // request and response objects
-    if (req.isAuthenticated()){
+    if (req.isAuthenticated()) {
         return next();
     }
     // if the user is not authenticated then redirect him to the login page
@@ -84,71 +84,63 @@ var isAuthenticated = function (req, res, next) {
 app.post('/passengerSignup', passport.authenticate('TravelerSignup', {
     successRedirect: '/passengerProfile',
     failureRedirect: '/mainPage',
-    failureFlash : true  
+    failureFlash: true
 }));
-
-// app.get("/home", function(req, res){
-//     res.json(req.user);
-// })
 
 app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
     successRedirect: '/passengerPage',
     failureRedirect: '/mainPage',
-    failureFlash : true  
+    failureFlash: true
 }));
-
 
 app.post('/driverSignup', passport.authenticate('DriverSignup', {
     successRedirect: '/driverProfile',
     failureRedirect: '/mainPage',
-    failureFlash : true  
+    failureFlash: true
 }));
 
 app.post('/driverLogin', passport.authenticate('DriverLogin', {
     successRedirect: '/driverPage',
     failureRedirect: '/mainPage',
-    failureFlash : true  
+    failureFlash: true
 }));
 
 
-app.get("/passengerPage",isAuthenticated, function(req,res){
+app.get("/passengerPage", isAuthenticated, function(req, res) {
     res.sendFile(__dirname + "/public/passengerPage.html");
 });
 
 
-app.get("/driverPage",isAuthenticated, function(req,res){
+app.get("/driverPage", isAuthenticated, function(req, res) {
     res.sendFile(__dirname + "/public/driverPage.html");
 });
 
 
-app.get("/mainPage", function(req,res){
+app.get("/mainPage", function(req, res) {
     res.sendFile(__dirname + "/public/index.html");
 });
 
 
-app.get("/passengerProfile", function(req,res){
+app.get("/passengerProfile", function(req, res) {
     res.sendFile(__dirname + "/public/passengerProfile.html");
 });
 
-app.get("/driverProfile", function(req,res){
+app.get("/driverProfile", function(req, res) {
     res.sendFile(__dirname + "/public/driverProfile.html");
 });
 
 
-app.get('/home', isAuthenticated, function(req, res){
+app.get('/home', isAuthenticated, function(req, res) {
     //console.log(req);
     res.json(req.user);
     //res.render('home', { user: req.user });
 });
 
-
-
 app.get("/passengerData", function(req, res) {
     Traveler.find({}, function(error, doc) {
         if (error) {
             console.log(error);
-        }
-        else {
+        } else {
             res.json(doc);
         }
     });
@@ -170,7 +162,7 @@ app.get("/drivers", function(req, res) {
 });
 
 // This will get the drivers listed
-app.get("/travelers", function(req, res) {
+app.get("/passengers", function(req, res) {
     // Grab every doc in the Students array
     Traveler.find({}, function(error, doc) {
         // Log any errors
@@ -183,23 +175,7 @@ app.get("/travelers", function(req, res) {
         }
     });
 });
-// app.post("/travelerSignup", function(req, res) {
-//     // Create a new note and pass the req.body to the entry
-//     var newTraveler = new Traveler(req.body);
 
-//     // And save the new note the db
-//     newTraveler.save(function(error, doc) {
-//         // Log any errors
-//         if (error) {
-//             console.log(error);
-//         }
-//         // Otherwise
-//         else {
-//             res.json(doc);
-//             //res.redirect("/pProfile");
-//         }
-//     });
-// });
 // route for passenger to fill in profile info
 app.post("/travelerProfile", function(req, res) {
     // Create a new note and pass the req.body to the entry
@@ -224,7 +200,7 @@ app.post("/pickupRequest", function(req, res) {
     console.log(pickupRequest);
     console.log(req.user);
     // for testing purpose, "77 77" must be the name of one of your existed records in database
-    Traveler.findOneAndUpdate({ _id: req.user._id}, pickupRequest, function(error, doc) {
+    Traveler.findOneAndUpdate({ _id: req.user._id }, pickupRequest, function(error, doc) {
         // Log any errors
         if (error) {
             console.log(error);
@@ -242,7 +218,7 @@ app.post("/driverProfile", function(req, res) {
     console.log(profile);
     console.log(req.user);
     // for testing purpose, "Tony W" must be the name of one of your existed records in database
-    Driver.findOneAndUpdate({ _id: req.user._id}, profile, function(error, doc) {
+    Driver.findOneAndUpdate({ _id: req.user._id }, profile, function(error, doc) {
         // Log any errors
         if (error) {
             console.log(error);
@@ -257,4 +233,3 @@ app.post("/driverProfile", function(req, res) {
 app.listen(3000, function() {
     console.log("App running on port 3000!");
 });
-
