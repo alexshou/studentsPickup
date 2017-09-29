@@ -9,7 +9,8 @@ $(document).on("click", "#savePickupRequest", function() {
             airline: $("#airlineInput").val(),
             flightNumber: $("#flightNumberInput").val(),
             airport: $("#airportInput").val(),
-            addtionalInstruction: $("#addtionalInstructionInput").val()
+            addtionalInstruction: $("#addtionalInstructionInput").val(),
+            pickupStatus: false
         }
     }).done(function(data) {
         console.log(data);
