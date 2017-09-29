@@ -87,9 +87,6 @@ app.post('/passengerSignup', passport.authenticate('TravelerSignup', {
     failureFlash : true  
 }));
 
-// app.get("/home", function(req, res){
-//     res.json(req.user);
-// })
 
 app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
     successRedirect: '/passengerPage',
@@ -99,7 +96,7 @@ app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
 
 
 app.post('/driverSignup', passport.authenticate('DriverSignup', {
-    successRedirect: '/home',
+    successRedirect: '/driverProfile',
     failureRedirect: '/mainPage',
     failureFlash : true  
 }));
@@ -129,16 +126,13 @@ app.get("/passengerProfile", function(req,res){
     res.sendFile(__dirname + "/public/passengerProfile.html");
 });
 
-
-app.get('/home', isAuthenticated, function(req, res){
-    //console.log(req);
-    res.json(req.user);
-    //res.render('home', { user: req.user });
+app.get("/driverProfile", function(req,res){
+    res.sendFile(__dirname + "/public/driverProfile.html");
 });
 
 
 
-app.get("/passengerData", function(req, res) {
+app.get("/passengerData", isAuthenticated, function(req, res) {
     Traveler.find({}, function(error, doc) {
         if (error) {
             console.log(error);
@@ -148,15 +142,6 @@ app.get("/passengerData", function(req, res) {
         }
     });
 });
-
-
-
-
-
-
-
-
-
 
 
 // This will get the drivers listed
@@ -174,37 +159,7 @@ app.get("/drivers", function(req, res) {
     });
 });
 
-// This will get the drivers listed
-app.get("/travelers", function(req, res) {
-    // Grab every doc in the Students array
-    Traveler.find({}, function(error, doc) {
-        // Log any errors
-        if (error) {
-            console.log(error);
-        }
-        // Or send the doc to the browser as a json object
-        else {
-            res.json(doc);
-        }
-    });
-});
-// app.post("/travelerSignup", function(req, res) {
-//     // Create a new note and pass the req.body to the entry
-//     var newTraveler = new Traveler(req.body);
 
-//     // And save the new note the db
-//     newTraveler.save(function(error, doc) {
-//         // Log any errors
-//         if (error) {
-//             console.log(error);
-//         }
-//         // Otherwise
-//         else {
-//             res.json(doc);
-//             //res.redirect("/pProfile");
-//         }
-//     });
-// });
 // route for passenger to fill in profile info
 app.post("/travelerProfile", function(req, res) {
     // Create a new note and pass the req.body to the entry
@@ -258,6 +213,15 @@ app.post("/driverProfile", function(req, res) {
         }
     });
 });
+
+
+//signout
+app.get('/signout', function(req, res) {
+    req.logout();
+    res.redirect('/');
+});
+
+
 
 app.listen(3000, function() {
     console.log("App running on port 3000!");
