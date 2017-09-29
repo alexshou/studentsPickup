@@ -11,6 +11,6 @@ var Main = require("./components/Main");
 // Note how ReactDOM takes in two parameters (the contents and the location)
 ReactDOM.render(
   // Try changing to isLoggedIn={true}:
-  <Main isPassenger={false} />,
+  <Main isPassenger={true} isLoggedIn={true}/>,
   document.getElementById('app')
 );

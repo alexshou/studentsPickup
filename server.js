@@ -64,7 +64,7 @@ app.get("/drivers", function(req, res) {
     });
 });
 
-// This will get the drivers listed
+// This will get the travelers listed
 app.get("/travelers", function(req, res) {
     // Grab every doc in the Students array
     Traveler.find({}, function(error, doc) {
@@ -95,6 +95,14 @@ app.post("/travelerSignup", function(req, res) {
         }
     });
 });
+
+app.post('/api/ride/request', function(req, res){
+// do the database stuff
+//req.body.arrival
+ res.json({
+    success: true
+ })
+})
 
 app.post("/travelerProfile", function(req, res) {
     // Create a new note and pass the req.body to the entry
