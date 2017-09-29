@@ -1,13 +1,13 @@
-var loadTravelers = function (data){
+var loadTravelers = function(data) {
     var travelerId;
-	var travelerOrder;
+    var travelerOrder;
     var travelerName;
     var travelerGender;
     var travelerDate;
-  	var travelerTime;
+    var travelerTime;
     var travelerFlight;
-  	var travelerPicked;
-  	var travelerNote;
+    var travelerPicked;
+    var travelerNote;
 
     for (var i = 0; i < data.length; i++) {
 
@@ -21,18 +21,18 @@ var loadTravelers = function (data){
         var travelerPickBtnTd = $("<td>");
         var travelerNoteTd = $("<td>");
 
-    	travelerId = data[i]._id;
-    	travelerOrder = i+1;
-    	travelerName = data[i].name;
+        travelerId = data[i]._id;
+        travelerOrder = i + 1;
+        travelerName = data[i].name
         travelerGender = data[i].gender;
         travelerDate = data[i].arrivalDate;
         travelerTime = data[i].arrivalTime;
         travelerFlight = data[i].flightNumber;
         travelerNote = data[i].note;
 
-    	var pickBtn = $("<button>Pick up</button>");
-    	pickBtn.addClass("btn btn-default btn-info pickBtnStyle");
-    	pickBtn.attr('id', travelerId);
+        var pickBtn = $("<button>Pick up</button>");
+        pickBtn.addClass("btn btn-default btn-info pickBtnStyle");
+        pickBtn.attr('id', travelerId);
 
         travelerTr.append(travelerOrderTd);
         travelerTr.append(travelerNameTd);
@@ -53,7 +53,7 @@ var loadTravelers = function (data){
         travelerFlightTd.html(travelerFlight);
         travelerPickBtnTd.append(pickBtn);
         travelerNoteTd.html(travelerNote);
-	};
+    };
 };
 
 
