@@ -43,7 +43,6 @@ var TravelerSchema = new Schema({
   },
   areaOfStudy: {
     type: String,
-
   },
 
   arrivalDate: {
