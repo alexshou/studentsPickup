@@ -251,6 +251,34 @@ app.post("/pickupConfirm", function(req, res) {
     });
 });
 
+app.post("/pickupConfirm", function(req, res) {
+    
+
+    // Create a new note and pass the req.body to the entry
+    var passengerId = req.body.passengerId;
+    
+    console.log(passengerId);
+
+    var pickupUpdate = {
+        pickupStatus: true,
+        driver_id: req.user._id
+    };
+    console.log(pickupUpdate);
+    // for testing purpose, "Tony W" must be the name of one of your existed records in database
+    Traveler.findOneAndUpdate({ _id: passengerId }, pickupUpdate, function(error, doc) {
+        // Log any errors
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.send(true);
+        }
+    });
+});
+
+
+
 //signout
 app.get('/signout', function(req, res) {
     req.logout();

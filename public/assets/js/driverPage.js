@@ -61,6 +61,7 @@ $.getJSON("/passengerData", function(data) {
     loadTravelers(data);
 });
 
+
 $(document).on("click", ".pickBtnFunction", function() {
     var passengerId = $(this).attr("id");
     $.ajax({
@@ -70,6 +71,6 @@ $(document).on("click", ".pickBtnFunction", function() {
             passengerId: passengerId
         }
     }).done(function(data) {
-         console.log(data);
+        console.log("success");
     });
 });
