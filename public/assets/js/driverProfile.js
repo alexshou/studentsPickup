@@ -6,13 +6,13 @@ $(document).on("click", "#saveDriverProfile", function() {
         data: {
             makeOfCar: $("#carMakeInput").val(),
             colorOfCar: $("#carColorInput").val(),
+            typeOfCar: $("#typeOfCarInput").val(),
             hometown: $("#hometownInput").val(),
             homeCountry: $("#homeCountryInput").val(),
             language: $("#languageInput").val(),
             areaOfStudy: $("#areaOfStudyInput").val(),
             university: $("#universityInput").val(),
             alumniSchool: $("#alumniSchoolInput").val(),
-            numberSeats: $("#numberSeatsInput").val(),
             gender: $("#genderInput").val(),
             note: $("#driverNoteInput").val()
         }
