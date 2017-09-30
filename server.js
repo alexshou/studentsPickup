@@ -203,6 +203,24 @@ app.post("/travelerProfile", function(req, res) {
         }
     });
 });
+
+app.get("/ConfirmedDriver", function(req,res){
+    if (req.user.pickupStatus != true) {
+        res.send(false);
+    }
+    else {
+        Driver.find({_id: req.user.driver_id }, function(error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json(doc);
+            }
+        });
+    }
+
+
+});
+
 // route for passenger to request a pickup
 app.post("/pickupRequest", function(req, res) {
     // Create a new note and pass the req.body to the entry

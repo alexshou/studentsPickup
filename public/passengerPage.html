@@ -25,6 +25,31 @@
     <div class="container">
         <div class="jumbotron my-4">
             <h1>Welcome Passenger!</h1>
+            <h2> Pickup status: <p id = "isPassengerPicked"> </p> </h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Driver Information</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>Gender</th>
+                                    <th>Make of Car</th>
+                                    <th>Type of Car</th>
+                                    <th>Color of Car</th>
+                                </tr>
+                            </thead>
+                            <tbody id="displayDriverInfo">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
             <h2> Schedule Pickup Request </h2>
             <form>
                 <div class="form-group row">
