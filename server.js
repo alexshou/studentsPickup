@@ -129,7 +129,7 @@ app.get("/driverProfile", isAuthenticated,  function(req,res){
     res.sendFile(__dirname + "/public/driverProfile.html");
 });
 
-
+//passengers to be picked
 app.get("/passengerData", isAuthenticated, function(req, res) {
     Traveler.find({pickupStatus: false}, function(error, doc) {
         if (error) {
@@ -139,6 +139,20 @@ app.get("/passengerData", isAuthenticated, function(req, res) {
         }
     });
 });
+
+//passengers already picked by a driver
+app.get("/pickedPassenger", isAuthenticated, function(req, res) {
+    Traveler.find({driver_id: req.user._id }, function(error, doc) {
+        if (error) {
+            console.log(error);
+        } else {
+            res.json(doc);
+        }
+    });
+});
+
+
+
 
 // This will get the drivers listed
 app.get("/drivers", function(req, res) {
@@ -189,6 +203,24 @@ app.post("/travelerProfile", function(req, res) {
         }
     });
 });
+
+app.get("/ConfirmedDriver", function(req,res){
+    if (req.user.pickupStatus != true) {
+        res.send(false);
+    }
+    else {
+        Driver.find({_id: req.user.driver_id }, function(error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json(doc);
+            }
+        });
+    }
+
+
+});
+
 // route for passenger to request a pickup
 app.post("/pickupRequest", function(req, res) {
     // Create a new note and pass the req.body to the entry
@@ -227,18 +259,11 @@ app.post("/driverProfile", function(req, res) {
 });
 // route for driver to confirm pickup 
 app.post("/pickupConfirm", function(req, res) {
-    // Create a new note and pass the req.body to the entry
-    
-    console.log(req.body);
     var pickupUpdate = {
         driver_id: req.user._id,
         pickupStatus: true
     };
-    console.log(pickupUpdate);
     var passengerId = req.body.passengerId;
-    console.log(passengerId);
-    console.log("111111111111");
-    // for testing purpose, "Tony W" must be the name of one of your existed records in database
     Traveler.findOneAndUpdate({ _id: passengerId }, pickupUpdate, function(error, doc) {
         // Log any errors - $set: {pickupStatus: true}
         if (error) {
@@ -250,6 +275,25 @@ app.post("/pickupConfirm", function(req, res) {
         }
     });
 });
+
+app.post("/unpickConfirm", function(req, res) {
+    var pickupUpdate = {
+        driver_id: undefined,
+        pickupStatus: false
+    };
+    var passengerId = req.body.passengerId;
+    Traveler.findOneAndUpdate({ _id: passengerId }, pickupUpdate, function(error, doc) {
+        // Log any errors - $set: {pickupStatus: true}
+        if (error) {
+            console.log(error);
+        }
+        // Or send the doc to the browser as a json object
+        else {
+            res.send(true);
+        }
+    });
+});
+
 
 //signout
 app.get('/signout', function(req, res) {

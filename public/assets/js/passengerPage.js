@@ -14,6 +14,6 @@ $(document).on("click", "#savePickupRequest", function() {
         }
     }).done(function(data) {
         console.log(data);
-        window.location.href = "/index.html";
+        window.location.href = "/passengerPage.html";
     });
 });
