@@ -55,8 +55,8 @@ var DriverSchema = new Schema({
     alumniSchool: {
         type: String
     },
-    numberSeats: {
-        type: Number
+    typeOfCar: {
+        type: String
     },
     note: {
         type: String
