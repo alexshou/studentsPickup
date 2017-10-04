@@ -220,8 +220,26 @@ app.get("/ConfirmedDriver", function(req,res){
             }
         });
     }
+});
 
+app.get("/passengerInformation", function(req,res){
+     Traveler.find({_id: req.user._id }, function(error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json(doc);
+            }
+        });
+});
 
+app.get("/driverInformation", function(req,res){
+     Driver.find({_id: req.user._id }, function(error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json(doc);
+            }
+        });
 });
 
 // route for passenger to request a pickup

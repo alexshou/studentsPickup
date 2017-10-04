@@ -79,4 +79,9 @@ $.getJSON("/ConfirmedDriver", function(data) {
     }
     
 });
+$.getJSON("/passengerInformation", function(data) {
+    var name = data[0].name;
+    $("#passengerNameDisplay").html(name);
+});
+
 

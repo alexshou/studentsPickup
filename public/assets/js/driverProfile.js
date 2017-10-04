@@ -21,3 +21,8 @@ $(document).on("click", "#saveDriverProfile", function() {
         window.location.href = "/driverPage.html";
     });
 });
+
+$.getJSON("/driverInformation", function(data) {
+    var name = data[0].name;
+    $("#driverNameDisplay").html(name);
+});
