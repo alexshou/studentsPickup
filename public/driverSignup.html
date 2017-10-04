@@ -25,6 +25,7 @@
     <div class="container">
         <div class="jumbotron my-4">
             <h1> Driver Register Here</h1>
+            <p id = "messageId"> </p>
             <form role="form" action="/driverSignup" method="POST">
                 <div class="form-group row">
                     <label for="firstNameInput" class="col-sm-2 col-form-label">First Name</label>
@@ -65,8 +66,18 @@
                 <div class="form-group row">
                     <button type="submit" class="btn btn-primary" id="savePassengerInfo">Submit</button>
                 </div>
-                <!-- <script src="./assets/js/signUp.js"> -->
-                </script>
+<script>
+    var searchParams = new URLSearchParams(window.location.search); //?anything=123
+    var message = searchParams.get("message");
+    if (message!=null)
+    {
+      var showMessage = $("<p><font color='red'>"+message+"</font></p>").delay(1000).fadeOut(500);
+      $("#messageId").append(showMessage);
+    }
+
+
+</script>
+
 </body>
 
 </html>

@@ -84,29 +84,51 @@ var isAuthenticated = function(req, res, next) {
 // Routes
 // ======
 
+//passenger signup/login
 app.post('/passengerSignup', passport.authenticate('TravelerSignup', {
     successRedirect: '/passengerProfile',
-    failureRedirect: '/mainPage',
+    failureRedirect: '/passengerSignup?message=User%20already%20exists!',
     failureFlash: true
 }));
+
+
+app.get('/passengerSignup', function(req, res){
+    res.sendFile(__dirname + "/public/passengerSignup.html");
+});
+
 
 app.post('/passengerLogin', passport.authenticate('TravelerLogin', {
     successRedirect: '/passengerPage',
-    failureRedirect: '/mainPage',
+    failureRedirect: '/passengerLogin?message=Username%2FPasswork%20is%20not%20valid!',
     failureFlash: true
 }));
 
+app.get('/passengerLogin', function(req, res){
+    res.sendFile(__dirname + "/public/passengerLogin.html");
+});
+
+
+//driver signup/login
 app.post('/driverSignup', passport.authenticate('DriverSignup', {
     successRedirect: '/driverProfile',
-    failureRedirect: '/mainPage',
+    failureRedirect: '/driverSignup?message=Driver%20already%20exists!',
     failureFlash: true
 }));
+
+app.get('/driverSignup', function(req, res){
+    res.sendFile(__dirname + "/public/driverSignup.html");
+});
+
 
 app.post('/driverLogin', passport.authenticate('DriverLogin', {
     successRedirect: '/driverPage',
-    failureRedirect: '/mainPage',
+    failureRedirect: '/driverLogin?message=Username%2FPasswork%20is%20not%20valid!',
     failureFlash: true
 }));
+
+app.get('/driverLogin', function(req, res){
+    res.sendFile(__dirname + "/public/driverLogin.html");
+});
 
 
 app.get("/passengerPage", isAuthenticated, function(req, res) {
