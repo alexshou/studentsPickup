@@ -18,3 +18,8 @@ $(document).on("click", "#savePassengerProfile", function() {
         window.location.href = "/passengerPage.html";
     });
 });
+
+$.getJSON("/passengerInformation", function(data) {
+    var name = data[0].name;
+    $("#passengerNameDisplay").html(name);
+});

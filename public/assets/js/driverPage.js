@@ -27,7 +27,7 @@ var loadTravelers = function(data) {
         travelerGender = data[i].gender;
         travelerDate = data[i].arrivalDate;
         travelerTime = data[i].arrivalTime;
-        travelerFlight = data[i].flightNumber;
+        travelerFlight = data[i].airline + data[i].flightNumber;
         travelerNote = data[i].note;
 
         var pickBtn = $("<button>Pick up</button>");
@@ -85,7 +85,7 @@ var loadPickedTravelers = function(data) {
         travelerGender = data[i].gender;
         travelerDate = data[i].arrivalDate;
         travelerTime = data[i].arrivalTime;
-        travelerFlight = data[i].flightNumber;
+        travelerFlight = data[i].airline + data[i].flightNumber;
         travelerNote = data[i].note;
 
         var pickBtn = $("<button>unpick</button>");
@@ -113,6 +113,11 @@ var loadPickedTravelers = function(data) {
         travelerNoteTd.html(travelerNote);
     };
 };
+
+$.getJSON("/driverInformation", function(data) {
+    var name = data[0].name;
+    $("#driverNameDisplay").html(name);
+});
 
 
 
