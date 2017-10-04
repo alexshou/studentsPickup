@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_c1hjq4m5:5m5td9hivulrf0ljjekag4tnmg@ds155934.mlab.com:55934/heroku_c1hjq4m5");
+mongoose.connect("mongodb://localhost/studentsPickup3");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -242,8 +242,26 @@ app.get("/ConfirmedDriver", function(req,res){
             }
         });
     }
+});
 
+app.get("/passengerInformation", function(req,res){
+     Traveler.find({_id: req.user._id }, function(error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json(doc);
+            }
+        });
+});
 
+app.get("/driverInformation", function(req,res){
+     Driver.find({_id: req.user._id }, function(error, doc) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.json(doc);
+            }
+        });
 });
 
 // route for passenger to request a pickup
