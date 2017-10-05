@@ -28,7 +28,7 @@ var loadTravelers = function(data) {
         travelerDate = data[i].arrivalDate;
         travelerTime = data[i].arrivalTime;
         travelerFlight = data[i].airline + data[i].flightNumber;
-        travelerNote = data[i].note;
+        travelerNote = data[i].addtionalInstruction;
 
         var pickBtn = $("<button>Pick up</button>");
         pickBtn.addClass("btn btn-default btn-info pickBtnFunction");
@@ -86,9 +86,9 @@ var loadPickedTravelers = function(data) {
         travelerDate = data[i].arrivalDate;
         travelerTime = data[i].arrivalTime;
         travelerFlight = data[i].airline + data[i].flightNumber;
-        travelerNote = data[i].note;
+        travelerNote = data[i].addtionalInstruction;
 
-        var pickBtn = $("<button>unpick</button>");
+        var pickBtn = $("<button>Cancel Pickup</button>");
         pickBtn.addClass("btn btn-default btn-info unpickBtnFunction");
         pickBtn.attr('id', travelerId);
 

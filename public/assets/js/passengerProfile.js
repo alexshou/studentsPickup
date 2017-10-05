@@ -11,7 +11,7 @@ $(document).on("click", "#savePassengerProfile", function() {
             university: $("#universityInput").val(),
             alumniSchool: $("#alumniSchoolInput").val(),
             gender: $("#genderInput").val(),
-            note: $("#travelerNoteInput").val()
+            //note: $("#travelerNoteInput").val()
         }
     }).done(function(data) {
         console.log(data);
