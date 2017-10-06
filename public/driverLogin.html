@@ -7,12 +7,13 @@
     <title>International Student Pickup</title>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <p> Driver Login </p>
+    <div class = "loginWraper">
+    <h2> Driver Login </h2>
     <p id = "messageId"> </p>
     <form role="form" action="/driverLogin" method="POST">
         <div class="form-group">
@@ -30,6 +31,7 @@
         <button type="submit" class="btn btn-success btn-block" id="loginBtn"><span class="glyphicon glyphicon-off"></span> Login</button>
         <button type="button" class="btn btn-danger btn-block" id="cancelBtn"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
     </form>
+</div>
 
     <script>
     var searchParams = new URLSearchParams(window.location.search); //?anything=123

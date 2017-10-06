@@ -132,6 +132,12 @@ h4 {
 
 
 	@media (min-width: 375px) and (max-width: 575px) { 
+
+  .loginWraper {
+   max-width:300px;
+  }
+  
+
 	html {
     font-size: 11px;
   }
@@ -177,6 +183,19 @@ h4 {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199px) { 
+   .container {
+    max-width:900px;
+  }
+
+  .jumbotron {
+   max-width:900px;
+  }
+
+  .loginWraper {
+   max-width:900px;
+   margin:0 auto;
+  }
+  
 
 
  }
@@ -190,6 +209,17 @@ h4 {
   .jumbotron {
    max-width:900px;
   }
+
+  .loginWraper {
+   max-width:900px;
+   margin:0 auto;
+  }
 	
 
  }
+
+
+  .loginWraper {
+   max-width:350px;
+   margin:0 auto;
+  }
