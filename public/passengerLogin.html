@@ -12,6 +12,16 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+    <header>
+        <nav class="navbar navbar-light" style="background-color:#2d2d30;">
+            <a class="navbar-brand" href="#">
+    <img src="assets/images/logo.png" width="40" height="40" alt="">  International Student Pickup</a>
+            <form class="form-inline my-2 my-lg-1">
+            </form>
+        </nav>
+    </header>
+    <div class = jumbotron>
     <p> Passenger Login </p>
      <p id = "messageId"> </p>
     <form role="form" action="/passengerLogin" method="POST">
@@ -31,6 +41,7 @@
         <button type="button" class="btn btn-danger btn-block" id="cancelBtn"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
 
     </form>
+    </div>
 
 <script>
     var searchParams = new URLSearchParams(window.location.search); //?anything=123
