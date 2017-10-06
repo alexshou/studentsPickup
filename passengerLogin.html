@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>International Student Pickup</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="fb-root"></div>
+    <header>
+        <nav class="navbar navbar-light" style="background-color:#2d2d30;">
+            <a class="navbar-brand" href="#">
+    <img src="assets/images/logo.png" width="40" height="40" alt="">  International Student Pickup</a>
+            <form class="form-inline my-2 my-lg-1">
+            </form>
+        </nav>
+    </header>
+    <div class = jumbotron>
+    <p> Passenger Login </p>
+     <p id = "messageId"> </p>
+    <form role="form" action="/passengerLogin" method="POST">
+        <div class="form-group">
+            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+            <input type="text" class="form-control" name="email" id="usrname" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+            <input type="text" class="form-control" id="psw" name="password" placeholder="Enter password">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="" checked>Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" id="loginBtn"><span class="glyphicon glyphicon-off"></span> Login</button>
+        <button type="button" class="btn btn-danger btn-block" id="cancelBtn"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
+    </form>
+    </div>
+
+<script>
+    var searchParams = new URLSearchParams(window.location.search); //?anything=123
+    var message = searchParams.get("message");
+    if (message!=null)
+    {
+      var showMessage = $("<p><font color='red'>"+message+"</font></p>").delay(1000).fadeOut(500);
+      $("#messageId").append(showMessage);
+    }
+
+    $(document).on("click", "#cancelBtn", function() {
+    window.location = "index.html";
+    });
+
+
+
+</script>
+
+
+</body>
+
+</html>
