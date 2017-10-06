@@ -9,6 +9,14 @@ var loadTravelers = function(data) {
     var travelerPicked;
     var travelerNote;
 
+    var travelerHometown;
+    var travelerCountry;
+    var travelerLanguage;
+    var travelerAlumniSchool;
+    var travelerAreaOfStudy;
+    var travelerUniversity;
+
+
     for (var i = 0; i < data.length; i++) {
 
         var travelerTr = $("<tr>");
@@ -30,9 +38,18 @@ var loadTravelers = function(data) {
         travelerFlight = data[i].airline + data[i].flightNumber;
         travelerNote = data[i].addtionalInstruction;
 
+        travelerHometown = data[i].hometown;
+        travelerCountry = data[i].country;
+        travelerLanguage = data[i].language;
+        travelerAlumniSchool = data[i].alumniSchool;
+        travelerAreaOfStudy = data[i].areaOfStudy;
+        travelerUniversity = data[i].university;
+
         var pickBtn = $("<button>Pick up</button>");
         pickBtn.addClass("btn btn-default btn-info pickBtnFunction");
         pickBtn.attr('id', travelerId);
+
+        travelerTr.attr('title', "Graduated from: " + travelerAlumniSchool + "\nAttending: " + travelerUniversity+ "\nMajor in: " + travelerAreaOfStudy + "\nSpeaking: " + travelerLanguage + "\nHometown: " + travelerHometown + ", "+ travelerCountry);
 
         travelerTr.append(travelerOrderTd);
         travelerTr.append(travelerNameTd);

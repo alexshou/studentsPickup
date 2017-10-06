@@ -5,7 +5,7 @@ $(document).on("click", "#savePassengerProfile", function() {
         url: "/travelerProfile",
         data: {
             hometown: $("#hometownInput").val(),
-            homeCountry: $("#homeCountryInput").val(),
+            country: $("#homeCountryInput").val(),
             language: $("#languageInput").val(),
             areaOfStudy: $("#areaOfStudyInput").val(),
             university: $("#universityInput").val(),
