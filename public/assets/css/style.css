@@ -87,20 +87,20 @@ h4 {
 }
 
 .price {
-	height:auto;
+	height:200px;
 	width:200px;
-	vertical-align: middle;
-	padding-top: 45px;
+	/*vertical-align: middle;
+	padding-top: 45px;*/
 }
 
 .understand {
-	height:auto;
+	height:200px;
 	width:200px;
 }
 
 .service {
-	height:auto;
-	width:180px;
+	height:200px;
+	width:200px;
 }
 
 h4 {
